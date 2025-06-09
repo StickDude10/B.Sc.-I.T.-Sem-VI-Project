@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpnntb2nkqasp"]
+
+[ext_resource type="Texture2D" uid="uid://0fa2ugjotmvl" path="res://assets/buttons/left.png" id="1_at17o"]
+[ext_resource type="Texture2D" uid="uid://dctdthgbchnsq" path="res://assets/buttons/right.png" id="2_cdl71"]
+[ext_resource type="Texture2D" uid="uid://bytlqkkbrn332" path="res://assets/buttons/up.png" id="3_hdy5h"]
+[ext_resource type="Texture2D" uid="uid://c05cs23trwyb5" path="res://assets/buttons/pause.png" id="4_yhum6"]
+
+[node name="TouchControls" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -126.0
+offset_right = 473.0
+grow_vertical = 0
+
+[node name="Left" type="TouchScreenButton" parent="HBoxContainer"]
+position = Vector2(100, -100)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("1_at17o")
+action = "left"
+
+[node name="Right" type="TouchScreenButton" parent="HBoxContainer"]
+position = Vector2(300, -100)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("2_cdl71")
+action = "right"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -226.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Jump" type="TouchScreenButton" parent="HBoxContainer2"]
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_hdy5h")
+action = "jump"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.5
+offset_right = 57.5
+offset_bottom = 82.0
+grow_horizontal = 2
+
+[node name="Pause" type="TouchScreenButton" parent="HBoxContainer3"]
+position = Vector2(0.5, 18)
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("4_yhum6")
+action = "pause"

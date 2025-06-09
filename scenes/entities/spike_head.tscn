@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://c52ppqj717nqw"]
+
+[ext_resource type="Texture2D" uid="uid://b107v6i4xmd5c" path="res://assets/traps/Spike Head/Blink (54x52).png" id="1_3kct8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slr6q"]
+atlas = ExtResource("1_3kct8")
+region = Rect2(0, 0, 54, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2w32"]
+atlas = ExtResource("1_3kct8")
+region = Rect2(54, 0, 54, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ninum"]
+atlas = ExtResource("1_3kct8")
+region = Rect2(108, 0, 54, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmujh"]
+atlas = ExtResource("1_3kct8")
+region = Rect2(162, 0, 54, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g50er"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_slr6q")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_b2w32")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_ninum")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_kmujh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o122g"]
+size = Vector2(41, 41)
+
+[node name="spike_head" type="AnimatableBody2D"]
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g50er")
+autoplay = "default"
+frame_progress = 0.058354
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_o122g")

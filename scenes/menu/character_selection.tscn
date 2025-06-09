@@ -1,0 +1,169 @@
+[gd_scene load_steps=10 format=3 uid="uid://d37g55mfslb05"]
+
+[ext_resource type="Script" uid="uid://bxxg7g60vsvak" path="res://scripts/character_selection.gd" id="1_5v58l"]
+[ext_resource type="Texture2D" uid="uid://dqkcxcbgjltjx" path="res://assets/background/PineForestParallax/MorningLayer6.png" id="4_1074x"]
+[ext_resource type="Texture2D" uid="uid://dupcbbs4ont0u" path="res://assets/background/PineForestParallax/MorningLayer4.png" id="5_cbear"]
+[ext_resource type="Texture2D" uid="uid://dgi0tijnoy0gb" path="res://assets/character/ch1/Jump (32x32).png" id="5_nj78t"]
+[ext_resource type="Texture2D" uid="uid://cpnmlhnynbpbu" path="res://assets/character/ch2/Jump (32x32).png" id="6_65j7c"]
+[ext_resource type="Texture2D" uid="uid://dm22p76f0sywv" path="res://assets/background/PineForestParallax/MorningLayer2.png" id="6_xhqbi"]
+[ext_resource type="Texture2D" uid="uid://cxywp1mjm0pk2" path="res://assets/character/ch3/Jump (32x32).png" id="7_1074x"]
+[ext_resource type="Texture2D" uid="uid://7eqb0w13vll6" path="res://assets/character/ch4/Jump (32x32).png" id="8_cbear"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35080"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.432929, 0.578139, 0.514704, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Character_Selection" type="Node"]
+script = ExtResource("1_5v58l")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(3200, 1800)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.450431, 0.765167, 0.41543, 1)
+texture = ExtResource("4_1074x")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -400)
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(3200, 1800)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("5_cbear")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -400)
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(3200, 1800)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("6_xhqbi")
+centered = false
+
+[node name="Back" type="Button" parent="."]
+texture_filter = 1
+offset_right = 45.0
+offset_bottom = 31.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-10, -10)
+theme_override_styles/normal = SubResource("StyleBoxFlat_35080")
+text = "Back
+"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -109.0
+offset_right = 465.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.5
+offset_top = -82.5
+offset_right = 82.5
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="character_container" type="GridContainer" parent="Control"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -374.5
+offset_top = 3.0
+offset_right = -234.5
+offset_bottom = 35.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+columns = 4
+
+[node name="ch1" type="TextureRect" parent="Control/character_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_nj78t")
+
+[node name="ch2" type="TextureRect" parent="Control/character_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("6_65j7c")
+
+[node name="ch3" type="TextureRect" parent="Control/character_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_1074x")
+
+[node name="ch4" type="TextureRect" parent="Control/character_container"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_cbear")
+
+[node name="buttons" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -372.5
+offset_top = -46.0
+offset_right = -94.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 10
+
+[node name="b1" type="Button" parent="Control/buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_35080")
+text = "Select"
+
+[node name="b2" type="Button" parent="Control/buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_35080")
+text = "Select"
+
+[node name="b3" type="Button" parent="Control/buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_35080")
+text = "Select"
+
+[node name="b4" type="Button" parent="Control/buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_35080")
+text = "Select"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/buttons/b1" to="." method="_on_b_1_pressed"]
+[connection signal="pressed" from="Control/buttons/b2" to="." method="_on_b_2_pressed"]
+[connection signal="pressed" from="Control/buttons/b3" to="." method="_on_b_3_pressed"]
+[connection signal="pressed" from="Control/buttons/b4" to="." method="_on_b_4_pressed"]
