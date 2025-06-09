@@ -19,8 +19,9 @@ Mystic Trails is a 2D Platformer game developed as a Semester VI BSc IT project 
 
 ### Windows
 
-1. Download the Mystic Trails `.exe` file from the `releases` or repository.  
-2. Run the executable to start the game.
+1. Download the Mystic Trails ZIP file from the `releases` or repository.  
+2. Extract the ZIP folder to a location of your choice.  
+3. Run the executable (.exe) inside the extracted folder to start the game
 
 ### Android
 
